@@ -1,0 +1,560 @@
+
+/* Main application layout */
+.app-layout {
+  display: flex;
+  min-height: 100vh;
+  background: #f5f7fb;
+}
+
+/* Sidebar */
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  width: 240px;
+  min-height: 100vh;
+  box-sizing: border-box;
+  padding: 28px 18px 20px;
+  background: #172033;
+  color: #ffffff;
+}
+
+.sidebar-logo {
+  margin: 0 0 8px;
+  padding: 0 10px;
+  font-size: 24px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.sidebar-welcome {
+  margin: 8px 0 28px;
+  padding: 0 10px;
+  font-size: 14px;
+  color: #a0a7b5;
+}
+
+/* Sidebar navigation */
+.sidebar nav {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sidebar-link {
+  width: 100%;
+  padding: 12px 14px;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  color: #cbd5e1;
+  font-size: 15px;
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.sidebar-link:hover {
+  background: #28354d;
+  color: #ffffff;
+}
+
+.sidebar-link.active {
+  background: #3457d5;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+/* Logout at the bottom */
+.sidebar-footer {
+  margin-top: auto;
+  padding-top: 24px;
+}
+
+.sidebar-logout {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #414b60;
+  border-radius: 8px;
+  background: transparent;
+  color: #fca5a5;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.sidebar-logout:hover {
+  background: #3b2532;
+}
+
+/* Main content */
+.main-content {
+  flex: 1;
+  min-width: 0;
+}
+
+/* Header */
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  min-height: 32px;
+  padding: 16px 28px;
+  border-bottom: 1px solid #e8ebf2;
+  background: #ffffff;
+  color: #27334b;
+}
+
+/* Responsive sidebar */
+@media (max-width: 600px) {
+  .app-layout {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    min-height: auto;
+    padding: 18px;
+  }
+
+  .sidebar-logo {
+    padding: 0;
+  }
+
+  .sidebar-welcome {
+    padding: 0;
+    margin-bottom: 18px;
+  }
+
+  .sidebar nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .sidebar-link {
+    width: auto;
+  }
+
+  .sidebar-footer {
+    margin-top: 18px;
+    padding-top: 0;
+  }
+}
+
+.main-content {
+  flex: 1;
+  min-width: 0;
+  padding: 36px;
+}
+
+.dashboard {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.dashboard-header {
+  margin-bottom: 28px;
+}
+
+.dashboard-header h1,
+.dashboard h1 {
+  margin: 0 0 8px;
+  font-size: 28px;
+}
+
+.dashboard-header p,
+.dashboard > p {
+  color: #64748b;
+  margin: 0;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+  margin-bottom: 36px;
+}
+
+.stat-card,
+.project-card {
+  background: white;
+  border: 1px solid #e5eaf2;
+  border-radius: 12px;
+  padding: 22px;
+}
+
+.stat-card p {
+  margin: 0 0 12px;
+  color: #64748b;
+  font-size: 14px;
+}
+
+.stat-card h2 {
+  margin: 0;
+  font-size: 28px;
+}
+
+.dashboard-section {
+  margin-bottom: 36px;
+}
+
+.dashboard-section > h2 {
+  margin: 0 0 18px;
+  font-size: 20px;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.project-card h3 {
+  margin: 0 0 10px;
+  font-size: 17px;
+}
+
+.project-card p {
+  margin: 0 0 18px;
+  color: #64748b;
+  line-height: 1.5;
+}
+
+.project-card span {
+  color: #475569;
+  font-size: 13px;
+}
+
+.task-list {
+  display: flex;
+  flex-direction: column;
+  background: white;
+  border: 1px solid #e5eaf2;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.task-row {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 18px 22px;
+  border-bottom: 1px solid #e5eaf2;
+}
+
+.task-row:last-child {
+  border-bottom: none;
+}
+
+.task-row > div {
+  flex: 1;
+  min-width: 0;
+}
+
+.task-row h4 {
+  margin: 0 0 6px;
+  font-size: 15px;
+}
+
+.task-row p {
+  margin: 0;
+  color: #64748b;
+  font-size: 13px;
+}
+
+.task-status,
+.task-priority {
+  color: #475569;
+  background: #f1f5f9;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.empty-state {
+  color: #64748b;
+  padding: 18px 0;
+}
+
+@media (max-width: 900px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .app-layout {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: auto;
+    padding: 18px;
+  }
+
+  .sidebar-logo {
+    margin-bottom: 16px;
+  }
+
+  .sidebar nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .sidebar-link {
+    width: auto;
+  }
+
+  .main-content {
+    padding: 22px 16px;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .task-row {
+    flex-wrap: wrap;
+    padding: 16px;
+  }
+}
+
+
+.project-form-card {
+  background: white;
+  border: 1px solid #e5eaf2;
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 32px;
+}
+
+.project-form-card h2 {
+  margin: 0 0 20px;
+  font-size: 20px;
+}
+
+.project-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 600px;
+}
+
+.project-form label {
+  font-size: 14px;
+  font-weight: 600;
+  margin-top: 8px;
+}
+
+.project-form input,
+.project-form textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font: inherit;
+  color: #172033;
+  background: white;
+}
+
+.project-form input:focus,
+.project-form textarea:focus {
+  outline: 2px solid #93c5fd;
+  border-color: #3b82f6;
+}
+
+.project-form textarea {
+  resize: vertical;
+}
+
+.form-actions,
+.project-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.primary-button,
+.secondary-button,
+.delete-button {
+  border: none;
+  border-radius: 7px;
+  padding: 10px 15px;
+  font: inherit;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.primary-button {
+  background: #2563eb;
+  color: white;
+}
+
+.primary-button:hover {
+  background: #1d4ed8;
+}
+
+.secondary-button {
+  background: #e2e8f0;
+  color: #172033;
+}
+
+.secondary-button:hover {
+  background: #cbd5e1;
+}
+
+.delete-button {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+.delete-button:hover {
+  background: #fecaca;
+}
+
+.project-actions {
+  margin-top: 18px;
+}
+
+.error-message {
+  color: #b91c1c;
+  margin-bottom: 16px;
+}
+
+.project-form select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font: inherit;
+  color: #172033;
+  background: white;
+}
+
+.project-form button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Authentication page */
+.auth-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: #f4f6fb;
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 420px;
+  padding: 36px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(20, 35, 70, 0.08);
+}
+
+.auth-card h1 {
+  margin: 0 0 8px;
+  color: #243b70;
+  font-size: 30px;
+}
+
+.auth-card > p {
+  margin-bottom: 28px;
+  color: #68738a;
+}
+
+.auth-card label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 18px;
+  color: #27334b;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.auth-card input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px 14px;
+  border: 1px solid #d9deea;
+  border-radius: 8px;
+  outline: none;
+  font: inherit;
+}
+
+.auth-card input:focus {
+  border-color: #4263eb;
+  box-shadow: 0 0 0 3px rgba(66, 99, 235, 0.12);
+}
+
+.auth-card > button {
+  width: 100%;
+  padding: 13px;
+  border: none;
+  border-radius: 8px;
+  background: #3457d5;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.auth-card > button:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.auth-error {
+  margin: 0 0 16px;
+  color: #c62828;
+  font-size: 14px;
+}
+
+.auth-card .auth-switch {
+  margin: 22px 0 0;
+  text-align: center;
+  font-size: 14px;
+}
+
+.auth-switch-button {
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: #3457d5;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* Header above the dashboard content */
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 16px;
+  padding: 16px 28px;
+  border-bottom: 1px solid #e8ebf2;
+  background: #ffffff;
+  color: #27334b;
+}
+
+.app-header button {
+  padding: 9px 14px;
+  border: 1px solid #d9deea;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #27334b;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.app-header button:hover {
+  background: #f4f6fb;
+}
